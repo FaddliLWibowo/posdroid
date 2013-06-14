@@ -1,12 +1,5 @@
 package com.scan.scanereader;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,7 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.app.AlertDialog;
-//import android.database.sqlite.SQLiteDatabase;
+
+import com.scan.scanereader.UserFunctions;
 
 
 public class MainActivity extends Activity{	
@@ -40,10 +34,9 @@ public class MainActivity extends Activity{
     private AlertDialog.Builder ad;
     
     //parsing JSON
-    JSONParser jsonParser = new JSONParser();
+    //JSONParser jsonParser = new JSONParser();
     //server
-    private static String url = "http://santrinulis.com/droidserver/index.php";
-    //JSON Node names
+
  	private static final String TAG_SUCCESS = "StatusID";
  	
  	EditText txtUser; 
@@ -53,6 +46,7 @@ public class MainActivity extends Activity{
 	@SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+		
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.form_login);
         
@@ -106,16 +100,10 @@ public class MainActivity extends Activity{
 		/**
 		 * Creating product
 		 * */
-
 		protected String doInBackground(String... args) {
     		
-    		List<NameValuePair> params = new ArrayList<NameValuePair>();
-        	params.add(new BasicNameValuePair("strUser", txtUser.getText().toString()));
-        	params.add(new BasicNameValuePair("strPass", txtPass.getText().toString()));
-        	
-        	//getting JSON Object
-        	//Note that create product url accepts POST method
-      		JSONObject json = jsonParser.makeHttpRequest(url,"POST", params);
+        	UserFunctions userFunction = new UserFunctions();
+      		JSONObject json = userFunction.loginUser(txtUser.getText().toString(), txtPass.getText().toString());
       	    
       		//check log cat fro response
       		Log.d("Create Response", json.toString());
@@ -156,6 +144,7 @@ public class MainActivity extends Activity{
 				txtPass.setText("");
 			 }
 		}
+		
 		
 	}
 	
