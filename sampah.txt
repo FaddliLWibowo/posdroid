@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+ 
+    <TextView
+        android:id="@+id/labelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="185dp"
+        android:text="@string/qr_code_scanner"
+        android:textSize="25sp"
+        android:textColor="#0044ff"
+        />
+    <TextView
+        android:id="@+id/labelCopy"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelText"
+        android:text="test : test barcode scaner"
+        android:textSize="15sp"
+        android:textColor="#444444"
+        />
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/labelCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mulai"
+        />
+ 
+</RelativeLayout>      
+
+	String resultServer = null;
+            		String strStatusID = null;
+            		String strMemberID = null;
+            		String strError = null;
+            		
+    	        	String url = "http://santrinulis.com/droidserver/index.php";
+    	        		
+    	        	List<NameValuePair> params = new ArrayList<NameValuePair>();
+    	        	params.add(new BasicNameValuePair("strUser", txtUser.getText().toString()));
+    	        	params.add(new BasicNameValuePair("strPass", txtPass.getText().toString()));
+    	        		
+    	        	resultServer = getHttpPost(url,params);
+    	        		
+    	        	//default value
+    	        	strStatusID = "0";
+    	        	strMemberID = "0";
+    	        	strError = "unknow Status";
+    	        		
+
+            		JSONObject c;
+            		try{
+            			c = new JSONObject(resultServer);
+            			strStatusID = c.getString("StatusID");
+            			strMemberID = c.getString("MemberID");
+            			strError = c.getString("Error");
+            			
+            			//Prepare Login
+                		if(strStatusID.equals("0")){
+                			//Dialog
+                			ad.setTitle("Error");
+                			ad.setIcon(android.R.drawable.btn_star_big_on);
+                			ad.setPositiveButton("Close", null);
+                			ad.setMessage(strError);
+                			ad.show();
+                			txtUser.setText("");
+                			txtPass.setText("");
+                		}
+                		else
+                		{
+                			Toast.makeText(MainActivity.this, "login", Toast.LENGTH_SHORT).show();
+                			Intent newActivity = new Intent(MainActivity.this,Dasboardd.class);
+                			startActivity(newActivity);
+                		}
+                		
+            		}catch (JSONException e){
+            			//TODO auto Generated catch block
+            			e.printStackTrace();
+            		}
