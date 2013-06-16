@@ -33,10 +33,6 @@ public class MainActivity extends Activity{
     //Alert dialog
     private AlertDialog.Builder ad;
     
-    //parsing JSON
-    //JSONParser jsonParser = new JSONParser();
-    //server
-
  	private static final String TAG_SUCCESS = "StatusID";
  	
  	EditText txtUser; 
@@ -144,8 +140,7 @@ public class MainActivity extends Activity{
 				txtPass.setText("");
 			 }
 		}
-		
-		
+	
 	}
 	
     @Override

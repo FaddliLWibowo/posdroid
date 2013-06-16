@@ -83,7 +83,6 @@ public class Dasboardd extends Activity{
 	
 	
     
-	//static String url1 = "http://santrinulis.com/droidserver/index.php";
     static final String[] outlet = new String[] {"outlet1","outlet2","outlet3"};
     
     @Override
