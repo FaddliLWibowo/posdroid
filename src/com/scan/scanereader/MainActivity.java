@@ -108,7 +108,6 @@ public class MainActivity extends Activity{
       		try {
     			int success = json.getInt(TAG_SUCCESS);
    					if (success == 1) {
-  						//status = 1 (ketemu)
    						flag = true;
       				} else {
       					flag = false;

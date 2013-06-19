@@ -31,12 +31,10 @@ public class UserFunctions {
     public JSONObject loginUser(String email, String password){
     	// Building Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-        //params.add(new BasicNameValuePair("tag", login_tag));
         params.add(new BasicNameValuePair("strUser", email));
         params.add(new BasicNameValuePair("strPass", password));
         JSONObject json = jsonParser.makeHttpRequest(loginURL,"POST", params);
-        // return json
-        // Log.e("JSON", json.toString());
+
         return json;
     }
 	
