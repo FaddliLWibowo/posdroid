@@ -27,14 +27,11 @@ public class MainActivity extends Activity{
     Boolean isInternetPresent = false;
     //Connection detector class
     ConnectionDetector cd;
-    
     //progres dialog
     private ProgressDialog pDialog;
     //Alert dialog
     private AlertDialog.Builder ad;
-    
  	private static final String TAG_SUCCESS = "StatusID";
- 	
  	EditText txtUser; 
     EditText txtPass; 
     Button btnLogin; 
@@ -56,7 +53,6 @@ public class MainActivity extends Activity{
         ad = new AlertDialog.Builder(this);
         //creating connection detector class instance
         cd = new ConnectionDetector(getApplicationContext());
-        
         txtUser = (EditText)findViewById(R.id.reg_username);
         txtPass = (EditText)findViewById(R.id.reg_password);
         btnLogin = (Button)findViewById(R.id.btnLogin); //button login 
