@@ -157,7 +157,7 @@
 		        android:drawSelectorOnTop="true"
 		        />
 		    
-		    <TextView android:id="@+id/promoterLabel" 
+		    <!-- <TextView android:id="@+id/promoterLabel" 
 		       	 android:layout_width="wrap_content"
 			  	 android:layout_height="wrap_content" 
 			  	 android:textColor="#372c24"
@@ -172,6 +172,7 @@
 		        android:layout_below="@id/promoterLabel"
 		        android:drawSelectorOnTop="true"
 		        />
+		        -->
 		    
 		    
 		    <TextView android:id="@+id/outletLabel" 
@@ -179,7 +180,7 @@
 			  	 android:layout_height="wrap_content" 
 			  	 android:textColor="#372c24"
 			   	 android:text="Outlet Name : " 
-			   	 android:layout_below="@id/spinner_promoter"
+			   	 android:layout_below="@id/spinner_Area"
 			   	 />
 		    
 		    <Spinner

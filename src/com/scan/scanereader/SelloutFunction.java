@@ -12,10 +12,10 @@ import org.json.JSONObject;
 public class SelloutFunction {
 	
 	private JSONParser jsonParser;
-	
 	private static String cannelURL = "http://10.0.2.2/droidapi/channel";
-	//private static String cannelURL = "http://santrinulis.com/droidserver/login";
 	private static String channel_tag = "getchannel";
+	private static String areaURL = "http://10.0.2.2/droidapi/area";
+	
 	
 	//cunstruktor
 	public SelloutFunction(){
@@ -31,9 +31,21 @@ public class SelloutFunction {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("tag", channel_tag));
         
-        JSONObject json1 = jsonParser.makeHttpRequest(cannelURL,"POST", params);
-        return json1;
+        JSONObject json = jsonParser.makeHttpRequest(cannelURL,"POST", params);
+        return json;
      }
+     
+     /**
+      * function make Area Request
+      * */
+      public JSONObject Area(String id_channel){
+     	// Building Parameters
+         List<NameValuePair> params = new ArrayList<NameValuePair>();
+         params.add(new BasicNameValuePair("id_chanel", id_channel));
+         
+         JSONObject json = jsonParser.makeHttpRequest(areaURL,"POST", params);
+         return json;
+      }
 	
 
 }
