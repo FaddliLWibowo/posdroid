@@ -38,10 +38,10 @@ public class SelloutFunction {
      /**
       * function make Area Request
       * */
-      public JSONObject Area(String id_channel){
+      public JSONObject Area(String id_chanel){
      	// Building Parameters
          List<NameValuePair> params = new ArrayList<NameValuePair>();
-         params.add(new BasicNameValuePair("id_chanel", id_channel));
+         params.add(new BasicNameValuePair("id_chanel", id_chanel));
          
          JSONObject json = jsonParser.makeHttpRequest(areaURL,"POST", params);
          return json;
