@@ -81,7 +81,8 @@
 		        android:layout_below="@id/garisinformasiproduct"
 		        android:layout_alignParentLeft="true"
 		        android:layout_toLeftOf="@+id/buttonStart"
-		        android:hint="Imei/Serial Number" />
+		        
+		        android:text="test"/>
 		    
 		    <Button android:id="@+id/buttonStart" 
 		        android:layout_width="wrap_content"
@@ -97,13 +98,45 @@
 			  	 android:layout_height="wrap_content" 
 			  	 android:textColor="#372c24"
 			   	 android:text="Model Name : " 
-			   	 android:layout_below="@id/buttonStart"/>
+			   	 android:layout_below="@id/buttonStart"
+			   	 android:layout_alignParentLeft="true"
+			   	 android:layout_toLeftOf="@+id/modelvalue"
+			   	 />
 		    
-		    <Spinner android:id="@+id/spinner_model"
+		    <TextView android:id="@+id/modelvalue" 
+			  	 android:layout_width="wrap_content"
+			     android:layout_height="wrap_content" 
+			  	 android:textColor="#372c24"
+			   	 android:text=".................... " 
+			   	 android:layout_below="@id/buttonStart"
+			   	 android:layout_alignParentRight="true"
+			   	 />
+		    
+		    <TextView android:id="@+id/hargaLabel" 
+		       	 android:layout_width="fill_parent"
+			  	 android:layout_height="wrap_content" 
+			  	 android:textColor="#372c24"
+			   	 android:text="harga : " 
+			   	 android:layout_below="@id/modelvalue"
+			   	 android:layout_alignParentLeft="true"
+			   	 android:layout_toLeftOf="@+id/hargavalue"
+			   	 />
+		    
+		    <TextView android:id="@+id/hargavalue" 
+			  	 android:layout_width="wrap_content"
+			     android:layout_height="wrap_content" 
+			  	 android:textColor="#372c24"
+			   	 android:text=".................... " 
+			   	 android:layout_below="@id/modelvalue"
+			   	 android:layout_alignParentRight="true"
+			   	 />
+		    
+		    <!--<Spinner android:id="@+id/spinner_model"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:drawSelectorOnTop="true" 
-				android:layout_below="@id/modelLabel"/>
+				android:layout_below="@id/modelLabel"/>-->
+				
 		    <!-- END Information Product -->
 		    
 		    <TextView
@@ -113,7 +146,7 @@
 		        android:text="Informasi Store"
 		        android:textSize="14sp"
 		        android:textColor="#70c600"
-		        android:layout_below="@id/spinner_model"
+		        android:layout_below="@id/hargavalue"
 		        android:layout_marginTop="20dip"/>
   			<View
   			    android:id="@+id/garisinformasistore"

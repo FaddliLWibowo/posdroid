@@ -12,11 +12,8 @@ import android.content.Context;
 public class UserFunctions {
 	
 	private JSONParser jsonParser;
-	private static String loginURL = "http://10.0.2.2/droidapi/login";
-	//private static String loginURL = "http://santrinulis.com/droidserver/login";
-	
-	//private static String login_tag = "login";
-    //private static String register_tag = "register";
+	//private static String loginURL = "http://10.0.2.2/droidapi/login";
+	private static String loginURL = "http://santrinulis.com/droidserver/login";
 	
 	//cunstruktor
 	public UserFunctions(){
